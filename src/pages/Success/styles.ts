@@ -22,6 +22,8 @@ export const SuccessContent = styled.section`
 
 export const SuccessText = styled.div`
   padding: 2.5rem;
+  max-width: 32.875rem;
+  width: 100%;
   border: 1px solid ${(props) => props.theme["yellow-900"]};
   border-radius: 6px 36px 6px 36px;
 

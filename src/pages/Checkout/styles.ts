@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const CheckoutContainer = styled.div`
   display: flex;
+  justify-content: space-between;
   gap: 2rem;
   padding: 2.5rem 0 15rem 0;
 
@@ -10,6 +11,15 @@ export const CheckoutContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+  }
+
+  .completeRequest {
+    flex: 1;
+  }
+
+  .totalRequest {
+    max-width: 28rem;
+    width: 100%;
   }
 `;
 
@@ -118,6 +128,10 @@ export const Payment = styled.div`
       color: ${(props) => props.theme["brown-300"]};
     }
   }
+
+  button:hover {
+    background-color: ${(props) => props.theme["gray-500"]};
+  }
 `;
 
 export const ConfirmRequest = styled.div`
@@ -140,6 +154,11 @@ export const ConfirmRequest = styled.div`
     font-size: 0.875rem;
     font-weight: bold;
     line-height: 1.6;
+  }
+
+  & > .placeholderCart {
+    text-align: center;
+    color: ${(props) => props.theme["brown-300"]};
   }
 `;
 

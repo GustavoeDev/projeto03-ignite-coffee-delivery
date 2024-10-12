@@ -25,11 +25,20 @@ export const CoffeeTextContent = styled.div`
   gap: 1rem;
   justify-content: center;
 
+  & > div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+  }
+
   span {
     background-color: ${(props) => props.theme["yellow-100"]};
     color: ${(props) => props.theme["yellow-900"]};
 
     padding: 0.25rem 0.5rem;
+    border-radius: 8px;
     font-size: 0.625rem;
     font-weight: bold;
   }

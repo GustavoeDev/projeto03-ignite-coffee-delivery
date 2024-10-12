@@ -4,6 +4,16 @@ import ilustration from "../../assets/Illustration.png";
 import { SuccessContainer, SuccessContent, SuccessText } from "./styles";
 
 export function Success() {
+  const storedAddress = localStorage.getItem(
+    "@ignite-coffee-delivery:address-1.0.0"
+  );
+  const storedPayment = localStorage.getItem(
+    "@ignite-coffee-delivery:payment-1.0.0"
+  );
+
+  const addressState = storedAddress ? JSON.parse(storedAddress) : null;
+  const paymentState = storedPayment ? JSON.parse(storedPayment) : "";
+
   return (
     <SuccessContainer>
       <h2>Uhu! Pedido confirmado</h2>
@@ -17,9 +27,14 @@ export function Success() {
             </span>
             <div>
               <p>
-                Entrega em <strong>Rua João Daniel Martinelli, 102</strong>
+                Entrega em{" "}
+                <strong>
+                  {addressState.road}, {addressState.number}
+                </strong>
               </p>
-              <p>Farrapos - Porto Alegre, RS</p>
+              <p>
+                {addressState.district} - {addressState.city}, {addressState.uf}
+              </p>
             </div>
           </div>
 
@@ -30,7 +45,7 @@ export function Success() {
             <div>
               <p>Previsão de entrega</p>
               <p>
-                <strong>Farrapos - Porto Alegre, RS</strong>
+                <strong>20 min - 30 min</strong>
               </p>
             </div>
           </div>
@@ -42,7 +57,7 @@ export function Success() {
             <div>
               <p>Pagamento na entrega</p>
               <p>
-                <strong>Cartão de Crédito</strong>
+                <strong>{paymentState}</strong>
               </p>
             </div>
           </div>
